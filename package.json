@@ -1,0 +1,65 @@
+{
+  "name": "web folder(10)",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --check ./JS/script.js && npx tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "keywords": [
+    "web-development",
+    "tailwindcss",
+    "javascript",
+    "frontend",
+    "css",
+    "html",
+    "web-design",
+    "responsive-design",
+    "ui-ux",
+    "web-applications",
+    "react",
+    "vue",
+    "angular",
+    "svelte",
+    "web-components",
+    "web-performance",
+    "web-optimization",
+    "web-accessibility",
+    "web-security",
+    "web-standards"
+  ],
+  "author": {
+    "name": "Arnob Vawal Raj",
+    "email": "arnobvawalraj@gmail.com",
+    "url": "https://arnobvawal.github.io/Arnob_Vawal"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "tailwindcss": "^4.3.4"
+  },
+  "dependencies": {
+    "braces": "^3.0.3",
+    "detect-libc": "^1.0.3",
+    "enhanced-resolve": "^5.25.1",
+    "fill-range": "^7.1.1",
+    "graceful-fs": "^4.2.11",
+    "is-extglob": "^2.1.1",
+    "is-glob": "^4.0.3",
+    "is-number": "^7.0.0",
+    "jiti": "^2.7.0",
+    "lightningcss": "^1.32.0",
+    "lightningcss-win32-x64-msvc": "^1.32.0",
+    "magic-string": "^0.30.21",
+    "micromatch": "^4.0.8",
+    "mri": "^1.2.0",
+    "node-addon-api": "^7.1.1",
+    "picocolors": "^1.1.1",
+    "picomatch": "^2.3.2",
+    "source-map-js": "^1.2.1",
+    "tapable": "^2.3.3",
+    "to-regex-range": "^5.0.1"
+  }
+}

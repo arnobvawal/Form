@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./src/output.css">
+<link rel="stylesheet" href="./src/input.css">
+<title>Personal Information Form</title>
+</head>
+<body>
+  <form class="form-wrap" id="infoForm" action="#" method="post" novalidate>
+    <h1>Personal information</h1>
+    <p class="intro">Fill in the details below. Fields marked * are required. Your progress is saved on this device as you type.</p>
+    <div class="progress-wrap">
+      <div class="progress" role="progressbar" aria-label="Form completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><div class="bar" id="bar"></div></div>
+      <span id="pct">0%</span>
+      <span id="saveStatus"></span>
+    </div>
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="first">1. First name *</label>
+          <input type="text" id="first" name="first" required>
+        </div>
+        <div class="field">
+          <label for="last">2. Last name *</label>
+          <input type="text" id="last" name="last" required>
+        </div>
+        <div class="field">
+          <label for="dob">3. Date of birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+        <div class="field">
+          <label for="gender">4. Gender</label>
+          <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="nationality">5. Nationality</label>
+          <input type="text" id="nationality" name="nationality">
+        </div>
+        <div class="field">
+          <label for="id">6. National ID number</label>
+          <input type="text" id="id" name="id" inputmode="numeric">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="email">7. Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">8. Phone number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field full">
+          <label for="address">9. Street address</label>
+          <input type="text" id="address" name="address">
+        </div>
+        <div class="field">
+          <label for="city">10. City</label>
+          <input type="text" id="city" name="city">
+        </div>
+        <div class="field">
+          <label for="zip">11. Postal code</label>
+          <input type="text" id="zip" name="zip">
+        </div>
+        <div class="field">
+          <label for="country">12. Country</label>
+          <select id="country" name="country">
+            <option value="">Select</option>
+            <option>Bangladesh</option>
+            <option>India</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field" id="otherCountryField" hidden>
+          <label for="otherCountry">Specify your country</label>
+          <input type="text" id="otherCountry" name="otherCountry">
+        </div>
+        <div class="field">
+          <label for="website">13. Website</label>
+          <input type="url" id="website" name="website" placeholder="https://">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Work and preferences</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="job">14. Job title</label>
+          <input type="text" id="job" name="job">
+        </div>
+        <div class="field">
+          <label for="salary">15. Expected salary</label>
+          <input type="number" id="salary" name="salary" min="0" step="100">
+        </div>
+        <div class="field">
+          <label for="start">16. Available from</label>
+          <input type="date" id="start" name="start">
+        </div>
+        <div class="field">
+          <label for="skill">17. Skill level: <output id="skillOut">5</output>/10</label>
+          <input type="range" id="skill" name="skill" min="1" max="10" value="5"
+                 oninput="document.getElementById('skillOut').textContent = this.value">
+        </div>
+        <div class="field">
+          <label for="color">18. Favorite color</label>
+          <input type="color" id="color" name="color" value="#1f5f8b">
+        </div>
+        <div class="field">
+          <label for="password">19. Password *</label>
+          <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+        <div class="field full">
+          <label for="bio">20. Short bio</label>
+          <textarea id="bio" name="bio" placeholder="Tell us a little about yourself"></textarea>
+        </div>
+        <div class="field check full">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the terms and privacy policy *</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>More details</legend>
+      <div class="grid">
+        <div class="field">
+          <label for="marital">21. Marital status</label>
+          <select id="marital" name="marital">
+            <option value="">Select</option>
+            <option>Single</option>
+            <option>Married</option>
+            <option>Divorced</option>
+            <option>Widowed</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="education">22. Education level</label>
+          <select id="education" name="education">
+            <option value="">Select</option>
+            <option>High school</option>
+            <option>Bachelor's degree</option>
+            <option>Master's degree</option>
+            <option>Doctorate</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="school">23. School or university</label>
+          <input type="text" id="school" name="school">
+        </div>
+        <div class="field">
+          <label for="experience">24. Years of experience</label>
+          <input type="number" id="experience" name="experience" min="0" max="60">
+        </div>
+        <div class="field full">
+          <span class="group-label" id="empLabel">25. Employment type</span>
+          <div class="options" role="radiogroup" aria-labelledby="empLabel">
+            <label class="opt"><input type="radio" name="employment" value="Full-time"> Full-time</label>
+            <label class="opt"><input type="radio" name="employment" value="Part-time"> Part-time</label>
+            <label class="opt"><input type="radio" name="employment" value="Contract"> Contract</label>
+            <label class="opt"><input type="radio" name="employment" value="Freelance"> Freelance</label>
+          </div>
+        </div>
+        <div class="field full">
+          <span class="group-label" id="langLabel">26. Languages spoken</span>
+          <div class="options" role="group" aria-labelledby="langLabel">
+            <label class="opt"><input type="checkbox" name="languages" value="Bangla"> Bangla</label>
+            <label class="opt"><input type="checkbox" name="languages" value="English"> English</label>
+            <label class="opt"><input type="checkbox" name="languages" value="Hindi"> Hindi</label>
+            <label class="opt"><input type="checkbox" name="languages" value="Arabic"> Arabic</label>
+            <label class="opt"><input type="checkbox" name="languages" value="Other"> Other</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="linkedin">27. LinkedIn profile</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="field">
+          <label for="contactTime">28. Best time to contact you</label>
+          <input type="time" id="contactTime" name="contactTime">
+        </div>
+        <div class="field">
+          <label for="emName">29. Emergency contact name</label>
+          <input type="text" id="emName" name="emName">
+        </div>
+        <div class="field">
+          <label for="emPhone">30. Emergency contact phone</label>
+          <input type="tel" id="emPhone" name="emPhone">
+        </div>
+        <div class="field">
+          <label for="source">31. How did you hear about us?</label>
+          <input type="text" id="source" name="source" list="sources">
+          <datalist id="sources">
+            <option value="Friend or colleague">
+            <option value="Social media">
+            <option value="Search engine">
+            <option value="Job board">
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="photo">32. Profile photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+          <img class="photo-preview" id="photoPreview" alt="Profile photo preview" hidden>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="reset">Clear form</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <section class="result" id="result" hidden aria-live="polite">
+    <h2>Form submitted</h2>
+    <pre id="resultData"></pre>
+    <button type="button" id="downloadBtn">Download as JSON</button>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
